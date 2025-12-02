@@ -1,116 +1,112 @@
-# Astro Netlify Sanity Starter
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>App Flow — Player & Admin (SVG)</title>
+  <style>
+    /* Center and give a light page background */
+    body { background:#f6f9ff; margin:0; font-family: Inter, Arial, sans-serif; display:flex; align-items:center; justify-content:center; min-height:100vh; }
+    .canvas { box-shadow: 0 8px 30px rgba(11,35,77,0.08); border-radius:10px; background:linear-gradient(180deg,#f8fbff, #ffffff); padding:18px; }
+    /* Make SVG responsive inside container */
+    .svg-wrap { width:100%; max-width:1400px; height:auto; }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <!-- Embedded SVG (original content preserved; xml prolog removed for HTML compatibility) -->
+    <div class="svg-wrap">
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <style>
+    .card { fill:#FFFFFF; stroke:#e1e9ff; stroke-width:2; rx:12; }
+    .title { font-family: Poppins, Arial; font-size:14px; fill:#0A1221; font-weight:600; }
+    .small { font-family: Inter, Arial; font-size:12px; fill:#2B3A67; }
+    .arrow { stroke:#9fb6ff; stroke-width:2; marker-end:url(#arrowhead); }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#9fb6ff" />
+    </marker>
+  </defs>
 
-![Astro Netlify Sanity Starter](https://assets.stackbit.com/docs/astro-sanity-starter-thumb.jpg)
+  <!-- Player flow left -->
+  <rect class="card" x="30" y="30" width="220" height="70"/>
+  <text class="title" x="50" y="60">Start: Splash / Legal</text>
+  <text class="small" x="50" y="78">Terms, Age check</text>
 
-[Live Demo](https://astro-sanity-starter-demo.netlify.app/)
+  <rect class="card" x="30" y="120" width="220" height="70"/>
+  <text class="title" x="50" y="150">Login / Register</text>
+  <text class="small" x="50" y="168">Mobile OTP → KYC (PAN/Aadhaar)</text>
 
-Netlify Astro and Sanity minimal starter with [visual editing](https://docs.netlify.com/visual-editor/overview/).
+  <rect class="card" x="30" y="210" width="220" height="70"/>
+  <text class="title" x="50" y="240">Home Dashboard</text>
+  <text class="small" x="50" y="258">Matches, Wallet, Offers</text>
 
-| Prerequisites                                                                |
-| :--------------------------------------------------------------------------- |
-| [Node.js](https://nodejs.org/) v20.+                                         |
-| (optional) [nvm](https://github.com/nvm-sh/nvm) for Node version management. |
+  <line class="arrow" x1="140" y1="100" x2="140" y2="120"/>
+  <line class="arrow" x1="140" y1="190" x2="140" y2="210"/>
 
-## Getting Started
+  <!-- Matches and flows center -->
+  <rect class="card" x="280" y="120" width="260" height="90"/>
+  <text class="title" x="300" y="150">Matches List</text>
+  <text class="small" x="300" y="168">Filter, Upcoming, Live</text>
 
-Create local project from this repo and run:
+  <line class="arrow" x1="250" y1="240" x2="280" y2="240"/>
 
-```txt
-npm install
-```
+  <rect class="card" x="580" y="120" width="260" height="90"/>
+  <text class="title" x="600" y="150">Match Details</text>
+  <text class="small" x="600" y="168">Countdown, Pitch, Contests</text>
 
-### Sign Into Sanity
+  <line class="arrow" x1="540" y1="240" x2="580" y2="240"/>
 
-If you are not already signed into Sanity via the CLI, install the CLI package and then run the login command.
+  <!-- Team builder -->
+  <rect class="card" x="580" y="260" width="260" height="120"/>
+  <text class="title" x="600" y="290">Team Builder</text>
+  <text class="small" x="600" y="308">Player select, C/VC, Save</text>
 
-```txt
-npm install -g @sanity/cli
-sanity login
-```
+  <line class="arrow" x1="740" y1="210" x2="740" y2="260"/>
 
-This will open a browser and walk you through the authentication process.
+  <!-- Contests and joining -->
+  <rect class="card" x="920" y="120" width="300" height="120"/>
+  <text class="title" x="940" y="150">Contests</text>
+  <text class="small" x="940" y="168">Join, Prize pool, Leaderboard</text>
 
-### Import Content
+  <line class="arrow" x1="840" y1="170" x2="920" y2="170"/>
 
-Once authenticated, you'll be able to create a Sanity project and import content.
+  <!-- Wallet flow -->
+  <rect class="card" x="280" y="420" width="260" height="110"/>
+  <text class="title" x="300" y="450">Wallet</text>
+  <text class="small" x="300" y="468">Add / Withdraw / Txn history</text>
 
-```txt
-npm run create-project
-```
+  <line class="arrow" x1="430" y1="230" x2="430" y2="420"/>
 
-_Note: You may want to sign into Sanity in the browser and rename your project._
+  <!-- Leaderboard / Results -->
+  <rect class="card" x="920" y="260" width="300" height="120"/>
+  <text class="title" x="940" y="290">Live Leaderboard</text>
+  <text class="small" x="940" y="308">Real-time ranks</text>
 
-Once the project exists and you've set the environment variables, you can import the content.
+  <rect class="card" x="920" y="420" width="300" height="110"/>
+  <text class="title" x="940" y="450">Result Page</text>
+  <text class="small" x="940" y="468">Winnings, Withdraw CTA</text>
 
-```txt
-npm run import {projectId}
-```
+  <!-- Admin flow right -->
+  <rect class="card" x="1150" y="30" width="200" height="70"/>
+  <text class="title" x="1170" y="60">Admin Login</text>
 
-Replace `{projectId}` with the project ID output from the previous command.
+  <rect class="card" x="1150" y="120" width="200" height="70"/>
+  <text class="title" x="1170" y="150">Admin Dashboard</text>
+  <text class="small" x="1170" y="168">Add Match / Contests</text>
 
-### Store Sanity Values
+  <rect class="card" x="1150" y="210" width="200" height="70"/>
+  <text class="title" x="1170" y="240">KYC Queue</text>
+  <text class="small" x="1170" y="258">Approve / Reject</text>
 
-Sign into Sanity to create an editor token, navigate to the following address (replace the `SANITY_PROJECT_ID` with your project ID) `https://www.sanity.io/manage/personal/project/SANITY_PROJECT_ID/api#tokens`. Then create `.env` file in you repo, copy & paste the following environment variables into the file and set their values.
+  <line class="arrow" x1="860" y1="480" x2="920" y2="480"/>
+  <line class="arrow" x1="1400" y1="160" x2="1350" y2="160"/>
 
-```txt
-SANITY_PROJECT_ID="..."
-SANITY_DATASET="..."
-SANITY_TOKEN="..."
-```
-
-### Run Sanity Studio
-
-Sanity Studio code exists for this project in the `studio` directory. First, install the dependencies in this directory.
-
-```txt
-cd studio
-npm install
-```
-
-Then create a `.env` file in the `studio` directory with the following environment variables and set their values:
-
-```txt
-SANITY_STUDIO_PROJECT_ID="..."
-SANITY_STUDIO_DATASET="..."
-```
-
-Then run the studio locally.
-
-```txt
-sanity dev
-```
-
-If you want to see the content, you can open your browser and navigate to localhost:3333.
-
-### Start Development Server
-
-Then you can run the Astro.js development server in root directory:
-
-```txt
-npm run dev
-```
-
-Install Netlify Visual Editor CLI:
-
-```txt
-npm install -g @stackbit/cli
-```
-
-And the Stackbit development server.
-
-```txt
-stackbit dev
-```
-
-This outputs your own Netlify Visual Editor URL. Open this, register or sign in, and you will be directed to Netlify Visual Editor for your new project.
-
-## Next Steps
-
-Here are a few suggestions on what to do next if you're new to Netlify Visual Editor:
-
-- Learn [how Netlify Visual Editor works](https://docs.netlify.com/visual-editor/concepts/how-visual-editor-works/)
-- Check [Netlify Visual Editor reference documentation](https://visual-editor-reference.netlify.com/)
-
-## Support
-
-If you get stuck along the way, get help in our [support forums](https://answers.netlify.com/).
+  <!-- Notes -->
+  <text class="small" x="30" y="830">Notes: All real-time flows powered by websocket. Admin actions propagate to matches/contests in real-time.</text>
+</svg>
+    </div>
+  </div>
+</body>
+</html>
